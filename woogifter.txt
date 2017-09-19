@@ -1,0 +1,9 @@
+// Hook in
+add_filter( 'woocommerce_checkout_fields' , 'theme_override_checkout_notes_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function theme_override_checkout_notes_fields( $fields ) {
+     $fields['order']['order_comments']['placeholder'] = 'Add some order notes or a gift message here.';
+     $fields['order']['order_comments']['label'] = 'Order notes or  gift message';
+     return $fields;
+}
